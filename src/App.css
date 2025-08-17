@@ -1,0 +1,85 @@
+/* Custom CSS for Animations */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Scrollbar styling for a cleaner look */
+::-webkit-scrollbar {
+    width: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #f1f5f9; /* Tailwind's gray-100 */
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1; /* Tailwind's gray-300 */
+    border-radius: 4px;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-on-scroll {
+    animation: none;
+    opacity: 0;
+}
+.animated-element {
+    animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes spin-slow {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+@keyframes spin-slow-reverse {
+    from {
+        transform: rotate(360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+}
+
+.animate-spin-slow-reverse {
+    animation: spin-slow-reverse 8s linear infinite;
+}
+
+@keyframes pulse-light {
+  0%, 100% { background-color: rgb(240, 245, 250); }
+  50% { background-color: rgb(220, 230, 240); }
+}
+
+.animate-pulse-light {
+    animation: pulse-light 5s ease-in-out infinite;
+}
